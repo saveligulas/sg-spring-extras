@@ -1,4 +1,4 @@
-package sg.spring.core.persistence.mapper;
+package sg.spring.core.mapper;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public interface IUniPersistenceDomainMapper<D, E> {
+public interface IToDomainMapper<D, E> {
     D toDomain(E entity);
 
     default Set<D> toDomainSet(Set<E> entities) {
