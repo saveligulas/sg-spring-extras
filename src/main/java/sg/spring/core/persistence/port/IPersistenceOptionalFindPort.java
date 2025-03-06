@@ -1,9 +1,7 @@
 package sg.spring.core.persistence.port;
 
-import org.dfa.core.persistence.IPortMarker;
-
 import java.util.Optional;
 
-public interface IPersistenceOptionalFindPort<D, ID> extends IPortMarker {
+public interface IPersistenceOptionalFindPort<D, ID> {
     Optional<D> findOpt(ID id);
 }

@@ -1,6 +1,6 @@
 package sg.spring.core.persistence.port;
 
-import org.dfa.core.persistence.IPortMarker;
+import sg.spring.core.persistence.IPortMarker;
 
 import java.util.List;
 import java.util.Map;

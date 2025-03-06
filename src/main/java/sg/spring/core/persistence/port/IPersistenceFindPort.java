@@ -1,10 +1,9 @@
 package sg.spring.core.persistence.port;
 
-import org.dfa.core.persistence.IPortMarker;
 import org.jspecify.annotations.Nullable;
 import org.springframework.dao.EmptyResultDataAccessException;
 
-public interface IPersistenceFindPort<D, ID> extends IPortMarker {
+public interface IPersistenceFindPort<D, ID> {
     D find(ID id);
 
     default void checkIfNull(@Nullable String name, Object o, ID id) {
