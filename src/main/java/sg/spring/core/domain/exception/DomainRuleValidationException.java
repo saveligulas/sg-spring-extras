@@ -1,12 +1,26 @@
 package sg.spring.core.domain.exception;
 
-//TODO: handle internal messages for error handling and external messages for the user
-public class DomainRuleValidationException extends RuntimeException{
+public class DomainRuleValidationException extends RuntimeException implements IDomainRuleViolation {
+    private final String violationMessage;
+    private final String errorCode;
+
     public DomainRuleValidationException(String message) {
-        super(message);
+        this(message, IDomainRuleViolation.buildErrorCode("default"));
     }
 
+    public DomainRuleValidationException(String message, String errorCode) {
+        super(message);
+        this.violationMessage = message;
+        this.errorCode = errorCode;
+    }
 
+    @Override
+    public String getViolationMessage() {
+        return violationMessage;
+    }
 
-
+    @Override
+    public String getErrorCode() {
+        return errorCode;
+    }
 }
