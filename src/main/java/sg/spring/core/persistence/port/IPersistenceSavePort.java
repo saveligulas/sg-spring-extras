@@ -1,0 +1,7 @@
+package sg.spring.core.persistence.port;
+
+import org.dfa.core.persistence.IPortMarker;
+
+public interface IPersistenceSavePort<D> extends IPortMarker {
+    void save(D d);
+}
