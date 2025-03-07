@@ -1,20 +1,19 @@
-package sg.spring.core.domain;
+package sg.spring.core.identifier;
 
 import org.jspecify.annotations.Nullable;
 
-public interface IObjectIdentifier<T> {
-    @Nullable T getIdentifier();
-    Long getVersion();
+public interface IModelIdentifier<T> {
+    @Nullable
+    T getIdentifier();
     boolean isDomainGenerated();
 
     /**
-     * Checks if the object is persisted. If the identifier is domain generated then this will only validate the version.
-     * Else the identifier is checked.
+     * Checks if the object is persisted. If the identifier is domain generated then this will always return true.
      * @return true if the object is persisted.
      */
     default boolean isPersisted() {
         if (isDomainGenerated()) {
-            return getVersion() > 0L;
+            return true;
         }
         return getIdentifier() != null;
     }

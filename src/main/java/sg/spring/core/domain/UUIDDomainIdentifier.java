@@ -2,12 +2,12 @@ package sg.spring.core.domain;
 
 import java.util.UUID;
 
-public abstract class UUIDModelIdentifier extends StandardObjectIdentifier<UUID> {
-    public UUIDModelIdentifier() {
+public abstract class UUIDDomainIdentifier extends DomainModelIdentifierBase<UUID> {
+    public UUIDDomainIdentifier() {
         this(UUID.randomUUID());
     }
 
-    public UUIDModelIdentifier(UUID identifier) {
+    public UUIDDomainIdentifier(UUID identifier) {
         super(identifier);
     }
 

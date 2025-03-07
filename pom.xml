@@ -8,10 +8,11 @@
         <version>3.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>sg.spring</groupId>
-    <artifactId>core</artifactId>
-    <version>0.0.1</version>
+    <groupId>sg.spring.core</groupId>
+    <artifactId>domain</artifactId>
+    <version>0.0.1.2</version>
     <name>SG Spring Core</name>
+    <packaging>jar</packaging>
     <url/>
     <licenses>
         <license/>
