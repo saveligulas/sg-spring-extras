@@ -1,7 +1,6 @@
 package sg.spring.core.message;
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -12,7 +11,7 @@ public class MessageSourceConfig {
     @Bean
     public CommandLineRunner setDefaultLocale() {
         return args -> {
-            Locale.setDefault(Locale.GERMAN);
+            Locale.setDefault(Locale.ENGLISH);
         };
     }
 

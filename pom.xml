@@ -8,10 +8,11 @@
         <version>3.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>sg.spring</groupId>
-    <artifactId>core</artifactId>
-    <version>0.0.1</version>
+    <groupId>sg.spring.core</groupId>
+    <artifactId>domain</artifactId>
+    <version>0.0.1.2</version>
     <name>SG Spring Core</name>
+    <packaging>jar</packaging>
     <url/>
     <licenses>
         <license/>
@@ -29,13 +30,12 @@
         <java.version>21</java.version>
     </properties>
 
-    <distributionManagement>
+    <repositories>
         <repository>
-            <id>github</id>
-            <name>Spring Domain Extras</name>
-            <url>https://maven.pkg.github.com/saveligulas/sg-spring-extras</url>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
         </repository>
-    </distributionManagement>
+    </repositories>
 
     <dependencies>
         <dependency>

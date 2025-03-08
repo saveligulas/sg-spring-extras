@@ -1,36 +1,24 @@
 package sg.spring.core.domain;
 
-import org.jspecify.annotations.NullMarked;
 import org.jspecify.annotations.Nullable;
+import sg.spring.core.identifier.IModelIdentifier;
 
 import java.util.Objects;
 
-@NullMarked
-public abstract class StandardObjectIdentifier<T> implements IObjectIdentifier<T> {
+public abstract class DomainModelIdentifierBase<T> implements IModelIdentifier<T> {
     @Nullable
     protected T identifier;
-    protected Long version;
 
-    public StandardObjectIdentifier(IObjectIdentifier<T> identifier, boolean constructorIdentifier) {
-        this(identifier.getIdentifier(), identifier.getVersion());
+    public DomainModelIdentifierBase(IModelIdentifier<T> identifier, boolean constructorIdentifier) {
+        this(identifier.getIdentifier());
     }
 
-    public StandardObjectIdentifier() {
+    public DomainModelIdentifierBase() {
         this(null);
     }
 
-    public StandardObjectIdentifier(@Nullable T identifier) {
-        this(identifier, 0L);
-    }
-
-    public StandardObjectIdentifier(@Nullable T identifier, Long version) {
+    public DomainModelIdentifierBase(@Nullable T identifier) {
         this.identifier = identifier;
-        this.version = version;
-    }
-
-    @Override
-    public Long getVersion() {
-        return this.version;
     }
 
     @Override
@@ -40,7 +28,7 @@ public abstract class StandardObjectIdentifier<T> implements IObjectIdentifier<T
 
     @Override
     public boolean isPersisted() {
-        return IObjectIdentifier.super.isPersisted();
+        return IModelIdentifier.super.isPersisted();
     }
 
     @Override
@@ -54,7 +42,7 @@ public abstract class StandardObjectIdentifier<T> implements IObjectIdentifier<T
 
     @Override
     public boolean equals(Object o) {
-        if (!(o instanceof StandardObjectIdentifier<?> that)) return false;
+        if (!(o instanceof DomainModelIdentifierBase<?> that)) return false;
         return identifier != null && Objects.equals(identifier, that.identifier);
     }
 
