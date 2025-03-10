@@ -27,7 +27,7 @@ public abstract class InternalExternalIdentifier<IID, EID> extends DomainModelId
     }
 
     @Override
-    public boolean isDomainGenerated() {
+    public boolean isGeneratedManually() {
         return false;
     }
 

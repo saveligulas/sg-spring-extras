@@ -1,6 +1,7 @@
 package sg.spring.core.factory;
 
-import org.dfa.core.factory.exception.FactoryRegistrationException;
+
+import sg.spring.core.factory.exception.FactoryRegistrationException;
 
 public class GenericTypeFactoryRegistryWrapper<T extends IFactoryIdentifier> {
 
