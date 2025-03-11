@@ -1,9 +1,11 @@
 package sg.spring.core.persistence.provider.neo4j;
 
+import lombok.Setter;
 import org.jspecify.annotations.Nullable;
 import org.springframework.data.neo4j.core.schema.Id;
 import sg.spring.core.identifier.IModelIdentifier;
 
+@Setter
 public abstract class Neo4jNodeIdentifier<T> implements IModelIdentifier<T> {
     @Id
     private T id;
@@ -16,7 +18,7 @@ public abstract class Neo4jNodeIdentifier<T> implements IModelIdentifier<T> {
     }
 
     @Override
-    public @Nullable T getIdentifier() {
+    public T getIdentifier() {
         return id;
     }
 
