@@ -9,40 +9,44 @@ import sg.spring.core.identifier.IVersioned;
 import java.util.UUID;
 
 @Setter
-public abstract class RelationshipPropertiesBase implements IModelDoubleIdentifier<UUID, String>, IVersioned {
+public abstract class RelationshipPropertiesBase implements IModelDoubleIdentifier<UUID, String> {
     private UUID uuid;
     @Nullable
     @RelationshipId
     private String elementId;
-    private Long version;
+    //TODO: remove and outsource
+    //private Long version;
 
     public RelationshipPropertiesBase() {
     }
 
     public RelationshipPropertiesBase(UUID uuid) {
-        this(uuid, null, 0L);
+        this(uuid, null);
     }
 
     public <T extends IModelDoubleIdentifier<UUID, String> & IVersioned> RelationshipPropertiesBase(T identifier) {
-        this(identifier.getIdentifier(), identifier.getExternalIdentifier(), identifier.getVersion());
+        this(identifier.getIdentifier(), identifier.getExternalIdentifier());
     }
 
     public RelationshipPropertiesBase(IModelDoubleIdentifier<UUID, String> identifier, boolean constructorHelper) {
-        this(identifier.getIdentifier(), identifier.getExternalIdentifier(), 0L);
+        this(identifier.getIdentifier(), identifier.getExternalIdentifier());
     }
 
 
-    public RelationshipPropertiesBase(UUID uuid, @Nullable String elementId, Long version) {
+    public RelationshipPropertiesBase(UUID uuid, @Nullable String elementId) {
         this.uuid = uuid;
         this.elementId = elementId;
-        this.version = version;
     }
 
     @Override
-    public Long getVersion() {
-        return version;
+    public boolean isGeneratedManually() {
+        return false;
     }
 
+    @Override
+    public boolean externalIsDomainGenerated() {
+        return true;
+    }
 
     @Override
     @Nullable

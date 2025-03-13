@@ -10,7 +10,7 @@ public abstract class SerialDomainIdentifier extends DomainModelIdentifierBase<L
     }
 
     @Override
-    public boolean isDomainGenerated() {
+    public boolean isGeneratedManually() {
         return false;
     }
 }

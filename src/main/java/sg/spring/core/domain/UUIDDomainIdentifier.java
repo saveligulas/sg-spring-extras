@@ -12,7 +12,7 @@ public abstract class UUIDDomainIdentifier extends DomainModelIdentifierBase<UUI
     }
 
     @Override
-    public boolean isDomainGenerated() {
+    public boolean isGeneratedManually() {
         return true;
     }
 }

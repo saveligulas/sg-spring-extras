@@ -5,14 +5,15 @@ import org.jspecify.annotations.Nullable;
 public interface IModelIdentifier<T> {
     @Nullable
     T getIdentifier();
-    boolean isDomainGenerated();
+    //TODO: rename this to generatedByMe or something like that
+    boolean isGeneratedManually();
 
     /**
      * Checks if the object is persisted. If the identifier is domain generated then this will always return true.
      * @return true if the object is persisted.
      */
     default boolean isPersisted() {
-        if (isDomainGenerated()) {
+        if (isGeneratedManually()) {
             return true;
         }
         return getIdentifier() != null;

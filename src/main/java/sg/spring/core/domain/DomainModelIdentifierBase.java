@@ -1,10 +1,14 @@
 package sg.spring.core.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.jspecify.annotations.Nullable;
 import sg.spring.core.identifier.IModelIdentifier;
 
 import java.util.Objects;
 
+@Getter
+@Setter
 public abstract class DomainModelIdentifierBase<T> implements IModelIdentifier<T> {
     @Nullable
     protected T identifier;
